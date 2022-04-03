@@ -1,3 +1,9 @@
 h1 {
 	margin-bottom: 1em;
 }
+
+.btn-rmv {
+	color: #fff;
+    background-color: #c75c5c;
+    border-color: #c75c5c;
+}

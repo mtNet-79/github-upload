@@ -118,5 +118,38 @@
   <script type="text/javascript" src="/static/js/libs/bootstrap-3.1.1.min.js" defer></script>
   <script type="text/javascript" src="/static/js/plugins.js" defer></script>
 
+  
+
 </body>
+{% block javascript %}
+    <script type="text/javascript">
+      $(document).ready(()=>{
+        console.log('READY');
+      });
+        const deleteBtn = document.getElementById("delete");
+        console.log("this here button", deleteBtn);
+        deleteBtn.onclick = function(e) {
+          
+          e.preventDefault();
+          const venueId = e.target.dataset['id'];
+          fetch('/venues/' + venueId, {
+              method: 'DELETE'
+          })
+          .then((res)=>{
+            return res.json();
+
+          })
+          .then(jsonRes=>{
+            if (jsonRes['success'] == true){
+              window.location.replace("http://127.0.0.1:5000/");
+            }
+
+          })
+          .catch(function(e) {
+            console.log('check it');
+            console.error(e);
+          });
+        }
+    </script>
+  {% endblock %}
 </html>
