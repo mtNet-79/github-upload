@@ -1,7 +1,7 @@
 .vscode
 __pycache__
 venv
-
+projects/01_fyyur/starter_code/config.py
 # OS generated files #
 ######################
 .DS_Store
